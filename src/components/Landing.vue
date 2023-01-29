@@ -1,11 +1,12 @@
 <template>
-  <div class="font-roboto bg-vbg bg-no-repeat bg-cover bg-center bg-fixed">
+<!-- bg-vbg bg-no-repeat bg-cover bg-center bg-fixed -->
+  <div class="font-roboto bg-green-500">
     <Nav />
     <div class="flex flex-col min-h-screen pt-[104px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="mt-32 mb-16 h-[75vh]">
         <img
           class="h-16 mb-3 ml-auto mr-auto"
-          src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/logo.png?alt=media&token=09cf5d05-0ec5-4df9-b438-0fa9201ea5be"
+          src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%203hdpi.png?alt=media&token=4b6dcd97-5ab5-4e8c-aff8-8c15b21f353b"
           alt="FreshChoice-logo"
         >
         <h1 class="text-center mb-3 text-6xl leading-none text-slate-900">
@@ -192,7 +193,7 @@
         >
           <img
             class="w-full h-full bg-center bg-no-repeat object-cover bg-cover"
-            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/logo.png?alt=media&token=09cf5d05-0ec5-4df9-b438-0fa9201ea5be"
+            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%205xhdpi.png?alt=media&token=17bc2aca-c5cc-4a12-bd55-bcdb58462216"
           >
         </div>
 

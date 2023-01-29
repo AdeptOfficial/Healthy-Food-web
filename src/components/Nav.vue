@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed w-full z-10 top-0 bg-amber-300">
+  <nav class="fixed w-full z-10 top-0 bg-slate-400">
     <div class="relative bg-blue-700 py-2 banner transition-all duration-300 ease-in-out">
       <p class="font-bold text-white text-center text-sm">
         <span class="mr-2">Be apart of the community now!</span>
@@ -30,8 +30,8 @@
         <a href="/">
           <img
             class="h-8"
-            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/logo.png?alt=media&token=09cf5d05-0ec5-4df9-b438-0fa9201ea5be"
-            alt="FreshChoice-logo"
+            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%2010xxxhdpi.png?alt=media&token=5a3eb167-035b-47ba-a9c0-ba1d01f25ef7"
+            alt="FreshChoice-s-logo"
           >
         </a>
       </div>
