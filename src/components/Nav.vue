@@ -1,11 +1,11 @@
 <template>
-  <nav class="fixed w-full z-10 top-0 bg-slate-400">
+  <nav class="fixed w-full z-10 top-0 bg-gray-200">
     <div class="relative bg-blue-700 py-2 banner transition-all duration-300 ease-in-out">
       <p class="font-bold text-white text-center text-sm">
         <span class="mr-2">Be apart of the community now!</span>
         <a
           class="underline pl-2 inline-flex"
-          href="#"
+          href="https://discord.gg/eFGZdHJq78"
         >
           Join Discord Server
           <svg
@@ -25,7 +25,7 @@
         </a>
       </p>
     </div>
-    <div class="container max-w-7xl mx-auto sm:px-4 lg:px-8 py-4 flex items-center">
+    <div class="container max-w-7xl mx-auto sm:px-4 lg:px-10 py-4 flex items-center">
       <div class="flex-shrink-0">
         <a href="/">
           <img

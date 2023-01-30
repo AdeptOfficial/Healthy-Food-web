@@ -1,14 +1,14 @@
 <template>
   <div class="w-full top-0">
     <hr>
-    <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
+    <footer class="text-center lg:text-left bg-gray-200 text-gray-600">
       <div class="mx-6 py-10 text-center md:text-left">
         <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="">
             <h6 class="uppercase font-semibold mb-4 flex items-center justify-center md:justify-start">
               <img
                 class="h-8"
-                src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/logo.png?alt=media&token=09cf5d05-0ec5-4df9-b438-0fa9201ea5be"
+                src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%2010xxxhdpi.png?alt=media&token=5a3eb167-035b-47ba-a9c0-ba1d01f25ef7"
                 alt="FreshChoice-logo"
               >
             </h6>
