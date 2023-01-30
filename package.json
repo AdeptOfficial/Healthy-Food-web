@@ -1,5 +1,5 @@
 {
-	"name": "EXD-project",
+	"name": "HealthyFoodweb",
 	"version": "0.1.0",
 	"homepage": "https://adeptofficial.github.io/Healthy-Food-web/",
 	"private": true,
@@ -9,7 +9,7 @@
 		"lint": "vue-cli-service lint",
 		"start": "nodemon app",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build"
+		"deploy": "sh deploy.sh"
 
 	},
 	"dependencies": {

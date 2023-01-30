@@ -5,7 +5,7 @@ module.exports = {
 		extend: {
 			backgroundImage: {
 				"Spring-rolls": "url('../../public/sr.jpg')",
-				"vbg": "url('../../public/vbg.jpg')",
+				"vbg": "url('../../public/freshchoice-landing-bg.jpeg')",
 			}
 		}
 	},
