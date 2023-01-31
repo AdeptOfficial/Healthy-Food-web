@@ -12,7 +12,7 @@ import NotFoundComponent from "./components/404";
 import App from "./App";
 
 const routes = [ 
-	{ path: "/fresh-choice", component: Landing }, 
+	{ path: "/", component: Landing }, 
 	// { path: "/signup", component: Signup }, 
 
 	// { path: "/about", component: About }, 
