@@ -19,7 +19,7 @@
           <br>Fresh Choice is here to break the cycle and provide real, healthy eating options. 
         </h1>
         <div class="text-center mt-8 space-y-6">
-          <a href="/signup">
+          <a href="#subscribe">
             <button
               type="button"
               class="inline-block px-7 py-3 bg-slate-900 text-yellow-400 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
@@ -165,6 +165,7 @@
                   <div class="mb-6 md:mb-0">
                     <div class="md:flex flex-row">
                       <input
+                        id="subscribe" 
                         type="text"
                         class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         placeholder="Enter your email"

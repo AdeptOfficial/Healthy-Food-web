@@ -13,7 +13,7 @@ import App from "./App";
 
 const routes = [ 
 	{ path: "/", component: Landing }, 
-	// { path: "/signup", component: Signup }, 
+	//{ path: "/signup", component: Signup }, 
 
 	// { path: "/about", component: About }, 
 	{ path: "/about/team", component: AboutTeam }, 
