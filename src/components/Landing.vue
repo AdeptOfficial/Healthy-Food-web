@@ -297,8 +297,8 @@ export default {
       const { data, error } = await supabase.from('email').insert({
         email: enteredEmail,
       })
-
-      document.getElementById('subscribe').style.borderColor = "green";
+      if (!error)
+        document.getElementById('subscribe').style.borderColor = "green";
 
     }
   }
