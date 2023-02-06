@@ -166,15 +166,20 @@
                     <div class="md:flex flex-row">
                       <input
                         id="subscribe" 
-                        type="text"
+                        type="email"
                         class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         placeholder="Enter your email"
+                        @v-model="email"
                       >
                       <button
                         type="submit"
                         class="inline-block px-7 py-3 bg-slate-900 text-yellow-400 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                         data-mdb-ripple="true"
                         data-mdb-ripple-color="light"
+                        @click="e => {
+                          e.preventDefault();
+                          sub();
+                        }"
                       >
                         Subscribe
                       </button>
@@ -263,14 +268,39 @@
   </div>
 </template>
 
+
 <script>
 import Nav from './Nav';
 import Footer from './Footer';
+// eslint-disable-next-line no-unused-vars
+import { supabase } from "../supabase/supabaseClient";
+
 export default {
   name: 'LandingComponent',
   components: {
     Nav,
     Footer
+  },
+  methods: {
+    sub: async function()
+    {
+
+      let enteredEmail = document.getElementById('subscribe').value;
+      console.log(enteredEmail)
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (!re.test(enteredEmail)) {
+        document.getElementById('subscribe').style.borderColor = "red";
+        return;
+      }
+
+      // eslint-disable-next-line no-unused-vars
+      const { data, error } = await supabase.from('email').insert({
+        email: enteredEmail,
+      })
+
+      document.getElementById('subscribe').style.borderColor = "green";
+
+    }
   }
 }
 </script>
