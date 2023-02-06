@@ -30,7 +30,7 @@
         <a href="/">
           <img
             class="h-8"
-            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%2010xxxhdpi.png?alt=media&token=5a3eb167-035b-47ba-a9c0-ba1d01f25ef7"
+            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%2013%404x.png?alt=media&token=d4335a1b-37fd-48de-876b-c531e9a82313"
             alt="FreshChoice-s-logo"
           >
         </a>

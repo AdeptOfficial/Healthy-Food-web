@@ -198,7 +198,7 @@
         >
           <img
             class="w-full h-full bg-center bg-no-repeat object-cover bg-cover"
-            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%205xhdpi.png?alt=media&token=17bc2aca-c5cc-4a12-bd55-bcdb58462216"
+            src="https://firebasestorage.googleapis.com/v0/b/exd-project-254c9.appspot.com/o/Asset%205xxxhdpi.png?alt=media&token=796fc241-e0bf-4729-b3cb-639e4aed4239"
           >
         </div>
 
