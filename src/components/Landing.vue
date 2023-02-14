@@ -67,7 +67,7 @@
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-blue-900">
-                  Asian Healthy Cuisine
+                  Asian Healthy Cuisine!
                 </h3>
                 <h5 class="text-lg font-medium mb-4">
                   Tasty and Healthy!
@@ -127,13 +127,13 @@
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-blue-800">
-                  Spread Love and Happiness
+                  For the Community!
                 </h3>
                 <h5 class="text-lg font-medium mb-4">
-                  :D
+                  Spread support to Student Orgs!
                 </h5>
                 <p class="text-gray-500">
-                  Feel good after a meal offered by us
+                  In the effort to help Student Orgs, we will do promotional events to help raise money!
                 </p>
               </div>
             </div>
@@ -191,6 +191,22 @@
           </div>
         </div>
       </section>
+
+
+      <modal 
+        :text-body="modalText.textBody"
+        :show="showModal"
+        @close="showModal = false"
+      >
+        <template #header>
+          <h3
+            className="text-center"
+          >
+            Fresh Choice
+          </h3>
+        </template>
+      </modal>
+
 
       <div class="flex mx-auto mb-16 rounded-lg overflow-hidden shadow-lg">
         <div
@@ -272,24 +288,36 @@
 <script>
 import Nav from './Nav';
 import Footer from './Footer';
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line
 import { supabase } from "../supabase/supabaseClient";
+import Modal from './Modal.vue'
 
 export default {
   name: 'LandingComponent',
   components: {
     Nav,
-    Footer
+    Footer,
+    Modal
+  }, data() {
+    return {
+      showModal: false,
+      modalText: {
+        textBody: "Please Enter an Email..."
+      }
+    }
   },
   methods: {
     sub: async function()
     {
 
       let enteredEmail = document.getElementById('subscribe').value;
-      console.log(enteredEmail)
+
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      this.showModal = true;
+
       if (!re.test(enteredEmail)) {
         document.getElementById('subscribe').style.borderColor = "red";
+        this.modalText.textBody="Invalid Email, please try again!\n"
         return;
       }
 
@@ -297,9 +325,12 @@ export default {
       const { data, error } = await supabase.from('email').insert({
         email: enteredEmail,
       })
-      if (!error)
+      if (!error) {
         document.getElementById('subscribe').style.borderColor = "green";
-
+        document.getElementById('subscribe').value = "";
+        this.modalText.textBody="Success! Thank you for subscribe!\n"
+        
+      }
     }
   }
 }
