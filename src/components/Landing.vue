@@ -328,7 +328,7 @@ export default {
       if (!error) {
         document.getElementById('subscribe').style.borderColor = "green";
         document.getElementById('subscribe').value = "";
-        this.modalText.textBody="Success! Thank you for subscribe!\n"
+        this.modalText.textBody="Success! Thanks for subscribing!\n"
         
       }
     }
