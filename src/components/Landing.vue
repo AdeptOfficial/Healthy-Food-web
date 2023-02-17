@@ -288,8 +288,8 @@
 <script>
 import Nav from './Nav';
 import Footer from './Footer';
-// eslint-disable-next-line
 import { supabase } from "../supabase/supabaseClient";
+import emailjs from '@emailjs/browser';
 import Modal from './Modal.vue'
 
 export default {
@@ -330,6 +330,14 @@ export default {
         document.getElementById('subscribe').value = "";
         this.modalText.textBody="Success! Thanks for subscribing!\n"
         
+        // to-do
+        // add sending email
+        emailjs.send(process.env.VUE_APP_EMAILJS_SERVICE_ID, process.env.VUE_APP_EMAILJS_TEMPLATE,{
+          from_name: "Fresh Choice",
+          to_name: "Leland",
+          message: "Thank you. Please take this survey!",
+          to_email: enteredEmail,
+        }, process.env.VUE_APP_EMAILJS_PUB_KEY);
       }
     }
   }
