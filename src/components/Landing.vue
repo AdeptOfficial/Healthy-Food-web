@@ -345,7 +345,12 @@ export default {
           to_name: enteredName,
           message: "Thank you. Please take this survey!",
           to_email: enteredEmail,
-        }, process.env.VUE_APP_EMAILJS_PUB_KEY);
+        }, process.env.VUE_APP_EMAILJS_PUB_KEY)
+        .then((result) => {
+            console.log('SUCCESS!: ', result.text);
+        }, (error) => {
+            console.log('FAILED!: ', error.text);
+        });
       }
     }
   }
