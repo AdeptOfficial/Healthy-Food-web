@@ -165,6 +165,12 @@
                   <div class="mb-6 md:mb-0">
                     <div class="md:flex flex-row">
                       <input
+                        id="name"
+                        type="name"
+                        class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Enter your name"
+                      >
+                      <input
                         id="subscribe" 
                         type="email"
                         class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -311,6 +317,7 @@ export default {
     {
 
       let enteredEmail = document.getElementById('subscribe').value;
+      let enteredName = document.getElementById('name').value;
 
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       this.showModal = true;
@@ -323,6 +330,7 @@ export default {
 
       // eslint-disable-next-line no-unused-vars
       const { data, error } = await supabase.from('email').insert({
+        name: enteredName,
         email: enteredEmail,
       })
       if (!error) {
@@ -334,7 +342,7 @@ export default {
         // add sending email
         emailjs.send(process.env.VUE_APP_EMAILJS_SERVICE_ID, process.env.VUE_APP_EMAILJS_TEMPLATE,{
           from_name: "Fresh Choice",
-          to_name: "Leland",
+          to_name: enteredName,
           message: "Thank you. Please take this survey!",
           to_email: enteredEmail,
         }, process.env.VUE_APP_EMAILJS_PUB_KEY);
