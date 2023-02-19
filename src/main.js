@@ -4,11 +4,11 @@ import { createPinia } from 'pinia';
 
 import Landing from "./components/Landing";
 // import About from "./components/About";
-import AboutTeam from "./components/AboutTeam";
-import Contact from "./components/Contact";
+//import AboutTeam from "./components/AboutTeam";
+//import Contact from "./components/Contact";
 // import Signup from "./components/Signup";
-import Support from "./components/Support";
-import NotFoundComponent from "./components/404";
+//import Support from "./components/Support";
+//import NotFoundComponent from "./components/404";
 import App from "./App";
 
 const routes = [ 
@@ -16,11 +16,11 @@ const routes = [
 	//{ path: "/signup", component: Signup }, 
 
 	// { path: "/about", component: About }, 
-	{ path: "/about/team", component: AboutTeam }, 
-	{ path: "/contact", component: Contact }, 
-	{ path: "/support", component: Support }, 
+	//{ path: "/about/team", component: AboutTeam }, 
+	//{ path: "/contact", component: Contact }, 
+	//{ path: "/support", component: Support }, 
 	
-	{ path: "/:pathMatch(.*)", component: NotFoundComponent } 
+	{ path: "/:pathMatch(.*)", component: Landing } 
 ];
 
 const router = createRouter({
