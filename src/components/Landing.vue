@@ -73,7 +73,7 @@
                   Tasty and Healthy!
                 </h5>
                 <p class="text-gray-500">
-                  Sign up and get to decide what will offer!
+                  Sign up and get to decide what will be offer!
                 </p>
               </div>
             </div>
@@ -97,10 +97,10 @@
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-blue-900">
-                  Cheap!
+                  Affordable!
                 </h3>
                 <h5 class="text-lg font-medium mb-4">
-                  As low as $5 a meal!
+                  We are for the students, not for the most profit!
                 </h5>
                 <p class="text-gray-500">
                   We understand your struggle in finding healthy food that won't break the bank!
@@ -164,6 +164,12 @@
 
                   <div class="mb-6 md:mb-0">
                     <div class="md:flex flex-row">
+                      <input
+                        id="name"
+                        type="name"
+                        class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Enter your name"
+                      >
                       <input
                         id="subscribe" 
                         type="email"
@@ -288,8 +294,8 @@
 <script>
 import Nav from './Nav';
 import Footer from './Footer';
-// eslint-disable-next-line
 import { supabase } from "../supabase/supabaseClient";
+import emailjs from '@emailjs/browser';
 import Modal from './Modal.vue'
 
 export default {
@@ -311,6 +317,7 @@ export default {
     {
 
       let enteredEmail = document.getElementById('subscribe').value;
+      let enteredName = document.getElementById('name').value;
 
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       this.showModal = true;
@@ -323,6 +330,7 @@ export default {
 
       // eslint-disable-next-line no-unused-vars
       const { data, error } = await supabase.from('email').insert({
+        name: enteredName,
         email: enteredEmail,
       })
       if (!error) {
@@ -330,6 +338,19 @@ export default {
         document.getElementById('subscribe').value = "";
         this.modalText.textBody="Success! Thanks for subscribing!\n"
         
+        // to-do
+        // add sending email
+        emailjs.send(process.env.VUE_APP_EMAILJS_SERVICE_ID, process.env.VUE_APP_EMAILJS_TEMPLATE,{
+          from_name: "Fresh Choice",
+          to_name: enteredName,
+          message: "Thank you. Please take this survey!",
+          to_email: enteredEmail,
+        }, process.env.VUE_APP_EMAILJS_PUB_KEY)
+        .then((result) => {
+            console.log('SUCCESS!: ', result.text);
+        }, (error) => {
+            console.log('FAILED!: ', error.text);
+        });
       }
     }
   }
