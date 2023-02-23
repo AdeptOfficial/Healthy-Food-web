@@ -73,7 +73,7 @@
                   Tasty and Healthy!
                 </h5>
                 <p class="text-gray-500">
-                  Sign up and get to decide what will offer!
+                  Sign up and get to decide what will be offer!
                 </p>
               </div>
             </div>
@@ -97,10 +97,10 @@
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-blue-900">
-                  Cheap!
+                  Affordable!
                 </h3>
                 <h5 class="text-lg font-medium mb-4">
-                  As low as $5 a meal!
+                  We are for the students, not for the most profit!
                 </h5>
                 <p class="text-gray-500">
                   We understand your struggle in finding healthy food that won't break the bank!
