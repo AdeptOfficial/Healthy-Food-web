@@ -343,7 +343,7 @@ export default {
         emailjs.send(process.env.VUE_APP_EMAILJS_SERVICE_ID, process.env.VUE_APP_EMAILJS_TEMPLATE,{
           from_name: "Fresh Choice",
           to_name: enteredName,
-          message: "Thank you. Please take this survey!",
+          link: "Survey link: https://forms.gle/gYdbFPHtRrUReozt5",
           to_email: enteredEmail,
         }, process.env.VUE_APP_EMAILJS_PUB_KEY)
         .then((result) => {
